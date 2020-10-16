@@ -17,11 +17,12 @@ public class TemperatureController {
 	@RequestMapping(value="/conversions/ctok", method= RequestMethod.GET)
 	public Temperature CelciusToKelvin()
 	{	
+		
 		return temp_ctok;
 		
 	}
 	
-	@RequestMapping(value="/conversions/ktok", method= RequestMethod.GET)
+	@RequestMapping(value="/conversions/ktoc", method= RequestMethod.GET)
 	public Temperature KelvinToCelcius()
 	{
 		

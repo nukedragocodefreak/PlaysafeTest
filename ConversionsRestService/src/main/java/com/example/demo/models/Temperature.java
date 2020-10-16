@@ -24,14 +24,16 @@ public class Temperature {
 	public double calculate_ktoc(Temperature kelvin_ktoc){
 		
 		//0K − 273.15 = -273,1°C
-		double result_ktoc = kelvin_ktoc.kelvin - 273.15;
+		String a  = String.valueOf(kelvin_ktoc.getKelvin());
+		double result_ktoc = kelvin_ktoc.getKelvin() - 273.15;
 		return result_ktoc;
 		
 		}
 	public double calculate_ctok(Temperature celcius_ctok){
 		
 		//0°C + 273.15 = 273,15K
-		double result_ctok = celcius_ctok.celcius + 273.15;
+		String a  = String.valueOf(celcius_ctok.getCelcius());
+		double result_ctok = celcius_ctok.getCelcius() + 273.15;
 		return result_ctok;
 		}
 	

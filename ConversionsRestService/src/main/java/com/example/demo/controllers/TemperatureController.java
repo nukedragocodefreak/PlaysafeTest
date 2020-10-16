@@ -12,26 +12,23 @@ import com.example.demo.models.Temperature;
 public class TemperatureController {
 
 	@Autowired
-	private Temperature temp_ktoc;
-	private Temperature temp_ctok;
-	//private double temp_k, temp_c;
+	
 	
 	@RequestMapping(value="/conversions/ctok", method= RequestMethod.POST)
 	public Temperature CelciusToKelvin(@RequestBody Temperature temp_c)
-	{	
-		String a = String.valueOf(temp_c.getCelcius());
-		
-		temp_ctok.calculate_ctok(temp_c);
-		
-		return temp_ctok;
+	{		
+		double result_ctok = temp_c.getCelcius() + 273.15;
+		temp_c.setKelvin(result_ctok);
+		return temp_c;
 		
 	}
 	
 	@RequestMapping(value="/conversions/ktoc", method= RequestMethod.POST)
 	public Temperature KelvinToCelcius(@RequestBody Temperature temp_k)
 	{
-		temp_ktoc.calculate_ktoc(temp_k);
-		return temp_ktoc;
+		double result_ktoc = temp_k.getKelvin() - 273.15;
+		temp_k.setCelcius(result_ktoc);;
+		return temp_k;
 	}
 	
 }

@@ -22,17 +22,4 @@ public class Length {
 	}
 	
 	
-	
-public double calculate_ktom(Length kilometres_ktom){
-		
-		double result_ktom = kilometres_ktom.kilometres * 0.621371;
-		return result_ktom;
-		
-		}
-	public double calculate_mtok(Length miles_mtok){
-		
-		double result_mtok = miles_mtok.miles * 1.60934;
-		return result_mtok;
-		}
-	
 }

@@ -13,20 +13,21 @@ public class TemperatureController {
 	@Autowired
 	private Temperature temp_ktoc;
 	private Temperature temp_ctok;
-	private double temp_k, temp_c;
+	//private double temp_k, temp_c;
 	
-	@RequestMapping(value="/conversions/ctok", method= RequestMethod.GET)
-	public Temperature CelciusToKelvin(Temperature celcius)
+	@RequestMapping(value="/conversions/ctok", method= RequestMethod.POST)
+	public Temperature CelciusToKelvin(Temperature temp_c)
 	{	
+		temp_ctok.calculate_ctok(temp_c);
 		
-		//return temp_ctok.calculate_ctok(celcius);
+		return temp_ctok;
 		
 	}
 	
-	@RequestMapping(value="/conversions/ktoc", method= RequestMethod.GET)
-	public Temperature KelvinToCelcius(Temperature kevin)
+	@RequestMapping(value="/conversions/ktoc", method= RequestMethod.POST)
+	public Temperature KelvinToCelcius(Temperature temp_k)
 	{
-		
+		temp_ktoc.calculate_ktoc(temp_k);
 		return temp_ktoc;
 	}
 	

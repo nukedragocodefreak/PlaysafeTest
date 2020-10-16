@@ -14,17 +14,18 @@ public class LengthController {
 	private Length len_mtok;
 	private Length len_ktom;
 	
-	@RequestMapping(value="/conversions/mtok", method= RequestMethod.GET)
-	public Length MilecToKilometres()
+	@RequestMapping(value="/conversions/mtok", method= RequestMethod.POST)
+	public Length MilecToKilometres(Length len_m)
 	{	
+		len_mtok.calculate_mtok(len_m);
 		return len_mtok;
 		
 	}
 	
-	@RequestMapping(value="/conversions/ktom", method= RequestMethod.GET)
-	public Length KilometrestoMiles()
+	@RequestMapping(value="/conversions/ktom", method= RequestMethod.POST)
+	public Length KilometrestoMiles(Length len_k)
 	{
-		
+		len_ktom.calculate_ktom(len_k);
 		return len_ktom;
 	}
 }

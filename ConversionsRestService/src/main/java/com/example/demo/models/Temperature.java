@@ -21,15 +21,18 @@ public class Temperature {
 		this.kelvin = kelvin;
 	}
 	
-	public void calculate_ktoc(double kelvin){
+	public double calculate_ktoc(Temperature kelvin_ktoc){
 		
 		//0K − 273.15 = -273,1°C
+		double result_ktoc = kelvin_ktoc.kelvin - 273.15;
+		return result_ktoc;
 		
 		}
-	public void calculate_ctok(double celcius){
+	public double calculate_ctok(Temperature celcius_ctok){
 		
 		//0°C + 273.15 = 273,15K
-		
+		double result_ctok = celcius_ctok.celcius + 273.15;
+		return result_ctok;
 		}
 	
 	
